@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { Manrope } from "next/font/google";
+import "./globals.css";
+const sans=Manrope({variable:"--font-sans",subsets:["cyrillic","latin"]});
+export const metadata:Metadata={metadataBase:new URL("https://www.neoholdinvest.bg"),title:{default:"NeoHold Invest | Инвестиционна компания",template:"%s | NeoHold Invest"},description:"Инвестиционна компания за модерни жилищни сгради, редови къщи и бутикови комплекси.",icons:{icon:"/favicon.png",shortcut:"/favicon.png",apple:"/favicon.png"},openGraph:{type:"website",locale:"bg_BG",siteName:"NeoHold Invest",title:"NeoHold Invest | Инвестиционна компания",description:"Инвестиции в съвременна жилищна среда. Проект „Лозана“.",images:[{url:"/og.png",width:1200,height:630,alt:"NeoHold Invest — проект Лозана"}]},twitter:{card:"summary_large_image",title:"NeoHold Invest | Инвестиционна компания",description:"Инвестиции в съвременна жилищна среда. Проект „Лозана“.",images:["/og.png"]}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="bg"><body className={sans.variable}><a className="skip-link" href="#main-content">Към основното съдържание</a><div id="main-content">{children}</div><div id="live-chat-root" data-integration="future-live-chat" /></body></html>}
