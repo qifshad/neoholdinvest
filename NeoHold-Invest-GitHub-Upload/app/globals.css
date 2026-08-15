@@ -151,3 +151,27 @@ html{scroll-padding-top:88px;-webkit-text-size-adjust:100%}body{-webkit-font-smo
 @media(max-width:1024px){.nav-links.open{animation:menu-in .28s cubic-bezier(.2,.7,.2,1) both}@keyframes menu-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}}
 @media(max-width:520px){.btn{min-height:50px}.contact-lines a,.contact-lines span{align-items:flex-start}.project-dossier:hover,.role-grid article:hover,.media-grid figure:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.hero-v2 .hero-bg,.nav-links.open{animation:none!important}.featured-v2:hover .featured-visual img,.media-grid figure:hover img{transform:none!important}}
+
+/* Stable mobile navigation */
+@media(max-width:1024px){
+  .header{top:0;isolation:isolate;background:rgba(3,16,22,.9)}
+  .header .nav{height:76px;position:relative}
+  .header .logo,.header .menu{position:relative;z-index:52}
+  .menu{border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(255,255,255,.06);cursor:pointer;touch-action:manipulation}
+  .menu svg{width:22px;height:22px}
+  .nav-links{display:flex;z-index:50;inset:0;height:100dvh;min-height:100vh;padding:calc(96px + env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));gap:0;visibility:hidden;opacity:0;pointer-events:none;transform:translateY(-10px);transition:opacity .22s ease,transform .28s cubic-bezier(.2,.7,.2,1),visibility 0s linear .28s;overscroll-behavior:contain}
+  .nav-links.open{visibility:visible;opacity:1;pointer-events:auto;transform:none;transition-delay:0s;animation:none}
+  .nav-link{flex:0 0 auto;min-height:52px;display:flex;align-items:center;font-size:clamp(18px,4.5vw,22px)}
+  .nav-cta{width:100%;min-height:56px;justify-content:space-between;margin-top:22px!important;font-size:15px}
+  .nav-cta-icon{flex:0 0 36px;width:36px;height:36px}
+}
+@media(max-width:520px){
+  .header .nav,.header-scrolled .nav{height:70px}
+  .nav-links{padding-top:calc(88px + env(safe-area-inset-top))}
+  .logo{gap:9px}.logo small{letter-spacing:.28em}
+}
+@media(max-height:620px) and (max-width:1024px){
+  .nav-links{padding-top:82px;padding-bottom:18px}
+  .nav-link{min-height:44px;font-size:17px;padding-block:8px}
+  .nav-cta{margin-top:12px!important;min-height:50px}
+}
