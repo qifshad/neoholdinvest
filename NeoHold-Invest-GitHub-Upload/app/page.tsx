@@ -65,7 +65,7 @@ export default function Home() {
 
       <section className="partners section" id="partners"><div className="container">
         <div className="section-head compact"><div><div className="eyebrow"><span/> Партньорска мрежа</div><h2>Компании, с които работим.</h2></div><p>Партньорският статус е потвърден от NeoHold Invest. Фирмените данни са от публични регистърни източници.</p></div>
-        <div className="partners-list">{partners.map(p=><article key={p.title}><div className={`partner-id${p.mark==="mm-image"?" partner-id-dark":""}`}>{p.mark==="image"?<img src="/partners/izo-termstroy.png" alt="IZO-TERMSTROY"/>:p.mark==="mm-image"?<img src="/partners/mm-konsult.png" alt="М И М КОНСУЛТ"/>:<span>{p.mark}</span>}</div><div><small>{p.detail}</small><h3>{p.title}</h3><p>{p.role}</p></div>{p.href?<a href={p.href} target="_blank" rel="noreferrer" aria-label={`Фирмена информация за ${p.title}`}><ArrowRight size={18}/></a>:<Building2 size={19}/>}</article>)}</div>
+        <div className="partners-list">{partners.map(p=><article key={p.title}><div className={`partner-id${p.mark==="image"?" partner-id-wide":""}${p.mark==="mm-image"?" partner-id-dark":""}`}>{p.mark==="image"?<img src="/partners/izo-termstroy.png" alt="IZO-TERMSTROY"/>:p.mark==="mm-image"?<img src="/partners/mm-konsult.png" alt="М И М КОНСУЛТ"/>:<span>{p.mark}</span>}</div><div><small>{p.detail}</small><h3>{p.title}</h3><p>{p.role}</p></div>{p.href?<a href={p.href} target="_blank" rel="noreferrer" aria-label={`Фирмена информация за ${p.title}`}><ArrowRight size={18}/></a>:<Building2 size={19}/>}</article>)}</div>
       </div></section>
       <ContactSection />
     </main><Footer /></>;
